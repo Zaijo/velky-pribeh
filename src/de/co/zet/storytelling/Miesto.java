@@ -1,10 +1,10 @@
 package de.co.zet.storytelling;
 
-import java.util.List;
-
-/**
- * TODO Description HERE.
- */
 public interface Miesto {
     String oznacenie();
+
+    /**
+     * Volitelne oznacuje ine miesto v ktorom sa nachadza
+     */
+    Miesto umiestnenie();
 }

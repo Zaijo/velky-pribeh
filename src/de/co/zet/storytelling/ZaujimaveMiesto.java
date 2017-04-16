@@ -16,6 +16,11 @@ public class ZaujimaveMiesto implements Miesto {
 
     @Override
     public String oznacenie() {
-        return null;
+        return oznacenie;
+    }
+
+    @Override
+    public Miesto umiestnenie() {
+        return umiestnenie;
     }
 }

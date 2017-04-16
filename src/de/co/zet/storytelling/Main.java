@@ -1,13 +1,18 @@
 package de.co.zet.storytelling;
 
 import de.co.zet.storytelling.DomSNadvorim.DomVelknazaBuilder;
+import de.co.zet.storytelling.observers.PlainText;
 
 public class Main {
 
     public static void main(String[] args) {
+        PlainText p = new PlainText();
+
         Skupina ucenici = new Skupina("Ucenici");
         Muz jezis = new Muz("Jezis");
-        Miesto getsemani = () -> "Zahrada za potokom Cedron";
+        jezis.addObserver(p);
+
+        Miesto getsemani = new Zahrada("Getsemani");
         jezis.isielDo(getsemani);
         Ludia vojaci = new Ludia("Vojaci")
                 .maliSoSebou(new Lampas())
@@ -17,7 +22,7 @@ public class Main {
         jezis.povedal("Koho hladate?", vojaci);
         vojaci.povedali("Jezisa Nazaretskeho!");
         jezis.povedal("Ja som!", vojaci);
-        vojaci.popadali(() -> "Zem");
+        vojaci.popadali(new ZaujimaveMiesto("zem"));
 
         jezis.povedal("Koho hladate?", vojaci);
         vojaci.povedali("Jezisa Nazaretskeho!");
@@ -46,7 +51,7 @@ public class Main {
         jan.s(simonPeter).isliDo(annasovhoDomu.nadvorie());
 
         vratnicka.povedal("Nie si aj ty z učeníkov toho človeka?", simonPeter);
-        Ohnisko ohen = new Ohnisko("Ohen na nadvori", annasovhoDomu.nadvorie());
+        Ohnisko ohen = new Ohnisko("Ohen na nadvori", annasovhoDomu);
         simonPeter.povedal("Nie som.", vratnicka);
 
         new Pocasie(annasovhoDomu).bolo("chladno");
@@ -71,7 +76,7 @@ public class Main {
         simonPeter.povedal("Nie som.");
         Muz malchusovPribuzny = new Muz("Malchusov pribuzny");
         malchusovPribuzny.povedal("A nevidel som ťa s ním v záhrade?!", simonPeter);
-        simonPeter.povedal("Nie som.");
+        simonPeter.povedal("Nie!");
         new Kohut().zaspieval();
 
 

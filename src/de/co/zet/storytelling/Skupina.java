@@ -1,5 +1,7 @@
 package de.co.zet.storytelling;
 
+import de.co.zet.storytelling.story_events.MoveEvent;
+
 /**
  * TODO Description HERE.
  */
@@ -29,11 +31,17 @@ public class Skupina implements NositelVeci, Pohyblivy {
     @Override
     public Pohyblivy isielDo(Miesto kam) {
         this.miesto = kam;
+        notifyObservers(new MoveEvent(this, kam));
         return this;
     }
 
     @Override
     public Miesto miesto() {
         return miesto;
+    }
+
+    @Override
+    public String meno() {
+        return nazov;
     }
 }

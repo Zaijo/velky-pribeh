@@ -1,33 +1,15 @@
 package de.co.zet.storytelling;
 
+import de.co.zet.storytelling.story_events.MoveEvent;
+
 import java.util.ArrayList;
 
-public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny {
+public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny, SchopnyReci {
     private String meno;
     private Miesto miesto;
 
     public Clovek(String meno) {
         this.meno = meno;
-    }
-
-    public Clovek hovori(String slova, Oslovitelny komu) {
-        System.out.println(meno + " -> " + komu.meno() + ": " + slova);
-        return this;
-    }
-
-    public Clovek hovori(String slova) {
-        System.out.println(meno + ": " + slova);
-        return this;
-    };
-
-    public Clovek povedal(String slova, Oslovitelny komu) {
-        hovori(slova, komu);
-        return this;
-    }
-
-    public Clovek povedal(String slova) {
-        hovori(slova);
-        return this;
     }
 
     public Clovek udrelKohoKamCim(Clovek koho, CastTela kam, PouzitelnyNaUder cim) {
@@ -58,6 +40,7 @@ public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny {
     @Override
     public Clovek isielDo(Miesto kam) {
         this.miesto = kam;
+        notifyObservers(new MoveEvent(this, kam));
         return this;
     }
 

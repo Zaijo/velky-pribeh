@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Stream;
 
-public class Ludia extends ArrayList<Clovek> implements Pohyblivy, SkupinoveAkcie, NositelVeci, Oslovitelny {
+public class Ludia extends ArrayList<Clovek> implements Pohyblivy, SchopnyReci, NositelVeci, Oslovitelny {
     private String oznacenie;
     private Miesto miesto;
 

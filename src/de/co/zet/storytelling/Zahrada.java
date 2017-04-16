@@ -1,16 +1,14 @@
 package de.co.zet.storytelling;
 
-public class Budova implements Miesto {
-    private String oznacenie;
+public class Zahrada implements Miesto {
     private Miesto umiestnenie;
 
-    public Budova(String oznacenie) {
-        this.oznacenie = oznacenie;
+    public Zahrada(String oznacenie) {
     }
 
     @Override
     public String oznacenie() {
-        return oznacenie;
+        return null;
     }
 
     @Override
