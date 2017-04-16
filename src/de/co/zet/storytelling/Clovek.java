@@ -30,6 +30,10 @@ public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny {
         return this;
     }
 
+    public Clovek udrelKohoKamCim(Clovek koho, CastTela kam, PouzitelnyNaUder cim) {
+        return this;
+    }
+
     public Ludia s(Clovek kym) {
         ArrayList<Clovek> list = new ArrayList<>();
         list.add(this);
@@ -41,6 +45,10 @@ public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny {
         list.add(this);
         list.addAll(viacerymi);
         return new Ludia(list);
+    }
+
+    public Clovek zviazal(Muz jezis) {
+        return this;
     }
 
     public String meno() {
@@ -56,5 +64,9 @@ public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny {
     @Override
     public Miesto miesto() {
         return this.miesto;
+    }
+
+    public Clovek saZohrieval(ZdrojTepla zdrojTepla) {
+        return this;
     }
 }
