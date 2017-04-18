@@ -6,7 +6,13 @@ import java.util.stream.Stream;
 
 public class Ludia extends ArrayList<Clovek> implements Pohyblivy, SchopnyReci, NositelVeci, Oslovitelny {
     private String oznacenie;
+    private String menoDativ;
     private Miesto miesto;
+
+    public Ludia(String oznacenie, String menoDativ) {
+        this.oznacenie = oznacenie;
+        this.menoDativ = menoDativ;
+    }
 
     public Ludia popadali(Miesto kam) {
         return this;
@@ -30,10 +36,6 @@ public class Ludia extends ArrayList<Clovek> implements Pohyblivy, SchopnyReci, 
     public Ludia s(Clovek kym) {
         this.add(kym);
         return this;
-    }
-
-    public Ludia(String oznacenie) {
-        this.oznacenie = oznacenie;
     }
 
     public Ludia s(Ludia viacerymi) {
@@ -73,5 +75,10 @@ public class Ludia extends ArrayList<Clovek> implements Pohyblivy, SchopnyReci, 
     @Override
     public String meno() {
         return oznacenie;
+    }
+
+    @Override
+    public String menoDativ() {
+        return menoDativ;
     }
 }

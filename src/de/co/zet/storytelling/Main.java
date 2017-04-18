@@ -2,34 +2,34 @@ package de.co.zet.storytelling;
 
 import de.co.zet.storytelling.DomSNadvorim.DomVelknazaBuilder;
 import de.co.zet.storytelling.observers.PlainText;
+import de.co.zet.storytelling.observers.Speech;
 
 public class Main {
 
     public static void main(String[] args) {
-        PlainText p = new PlainText();
-
         Skupina ucenici = new Skupina("Ucenici");
-        Muz jezis = new Muz("Jezis");
-        jezis.addObserver(p);
+        Muz jezis = new Muz("Ježiš", "Ježišovi");
+        jezis.addObserver(new PlainText());
+        jezis.addObserver(new Speech());
 
         Miesto getsemani = new Zahrada("Getsemani");
         jezis.isielDo(getsemani);
-        Ludia vojaci = new Ludia("Vojaci")
+        Ludia vojaci = new Ludia("Vojaci", "Vojakom")
                 .maliSoSebou(new Lampas())
                 .maliSoSebou(new Fakla())
                 .maliSoSebou(new Zbran());
         vojaci.isliDo(getsemani);
-        jezis.povedal("Koho hladate?", vojaci);
-        vojaci.povedali("Jezisa Nazaretskeho!");
+        jezis.povedal("Koho hľadáte?", vojaci);
+        vojaci.povedali("Ježiša Nazaretského!");
         jezis.povedal("Ja som!", vojaci);
         vojaci.popadali(new ZaujimaveMiesto("zem"));
 
-        jezis.povedal("Koho hladate?", vojaci);
-        vojaci.povedali("Jezisa Nazaretskeho!");
+        jezis.povedal("Koho hľadáte?", vojaci);
+        vojaci.povedali("Ježiša Nazaretského!");
         jezis.povedal("Povedal som vám: Ja som. Keď teda mňa hľadáte, týchto nechajte odísť!", vojaci);
 
-        Muz simonPeter = new Muz("Šimon Peter");
-        Muz malchus = new Muz("Malchus");
+        Muz simonPeter = new Muz("Šimon Peter", "Šimonovi Petrovi");
+        Muz malchus = new Muz("Malchus", "Malchusovi");
         Mec petrovMec = new Mec();
         simonPeter.malSoSebou(petrovMec).vytiahol(petrovMec).pouzil(petrovMec, malchus);
         jezis.povedal("Schovaj meč do pošvy! Azda nemám piť kalich, ktorý mi dal Otec?!");
@@ -41,11 +41,11 @@ public class Main {
         vojaci.chytili(jezis).zviazali(jezis).isliDo(annasovhoDomu);
         jezis.isielDo(annasovhoDomu);
 
-        Muz jan = new Muz("Jan");
+        Muz jan = new Muz("Jan", "Jánovi");
         simonPeter.isielDo(annasovhoDomu.vstupneDvere());
         jan.isielDo(annasovhoDomu.nadvorie());
 
-        Zena vratnicka = new Zena("Vratnicka domu");
+        Zena vratnicka = new Zena("Vrátnička domu", "Vrátničke domu");
         jan.povedal("", vratnicka);
         jan.isielDo(annasovhoDomu.vstupneDvere());
         jan.s(simonPeter).isliDo(annasovhoDomu.nadvorie());
@@ -57,24 +57,24 @@ public class Main {
         new Pocasie(annasovhoDomu).bolo("chladno");
         simonPeter.isielDo(ohen).saZohrieval(ohen);
 
-        Velknaz annas = new Velknaz("Annas");
-        annas.povedal("Ake je tvoje ucenie? A co tvoji ucenici?", jezis);
+        Velknaz annas = new Velknaz("Annáš", "Annášovi");
+        annas.povedal("Aké je tvoje učenie? A čo tvoji učeníci?", jezis);
         jezis.povedal("Ja som verejne hovoril svetu. Vždy som učil v synagóge a v chráme, kde sa schádzajú " +
                 "všetci Židia, a nič som nehovoril tajne. Prečo sa pýtaš mňa? Opýtaj sa tých, ktorí počuli, čo " +
                 "som im hovoril! Oni vedia, čo som hovoril.", annas);
-        Muz sluha = new Muz("Annasov sluha");
+        Muz sluha = new Muz("Annášov sluha", "Annášovmu sluhovi");
         sluha.udrelKohoKamCim(jezis, CastTela.TVAR, CastTela.RUKA).povedal("Tak odpovedáš veľkňazovi?", jezis);
         jezis.povedal("Ak som zle povedal, dokáž, čo bolo zlé, ale ak dobre, prečo ma biješ?!", sluha);
 
-        Muz annasovVojak = new Muz("Annasov vojak");
+        Muz annasovVojak = new Muz("Annasov vojak", "Annášovmu vojakovi");
         DomSNadvorim kajfasovDom = new DomVelknazaBuilder("Kajfasov dom").build();
         annasovVojak.zviazal(jezis).s(jezis).isliDo(kajfasovDom);
 
         simonPeter.saZohrieval(ohen);
-        Ludia ludiaPriOhni = new Ludia("ludia pri ohni");
+        Ludia ludiaPriOhni = new Ludia("ludia pri ohni", "Ľuďom pri ohni");
         ludiaPriOhni.povedali("Nie si aj ty z jeho učeníkov?");
         simonPeter.povedal("Nie som.");
-        Muz malchusovPribuzny = new Muz("Malchusov pribuzny");
+        Muz malchusovPribuzny = new Muz("Malchusov pribuzny", "Malchusovmu príbuznému");
         malchusovPribuzny.povedal("A nevidel som ťa s ním v záhrade?!", simonPeter);
         simonPeter.povedal("Nie!");
         new Kohut().zaspieval();
@@ -82,10 +82,10 @@ public class Main {
         Miesto vladnaBudova = new Budova("Vladna budova");
         Miesto predVladnouBudovou = new ZaujimaveMiesto("Pred vladnou budovou");
         // TODO bolo uz rano
-        Ludia velknaziAZakonnici = new Ludia("Velknazi a zakonnici");
+        Ludia velknaziAZakonnici = new Ludia("Veľkňazi a zákonníci", "Židom");
         annasovVojak.s(velknaziAZakonnici).s(jezis).isliDo(predVladnouBudovou);
         annasovVojak.s(jezis).isliDo(vladnaBudova);
-        Muz pilat = new Muz("Pilat");
+        Muz pilat = new Muz("Pilat", "Pilátovi");
         pilat.bol(vladnaBudova).isielDo(predVladnouBudovou).povedal("Akú žalobu podávate proti tomuto človeku?",
                 velknaziAZakonnici);
         velknaziAZakonnici.povedali("Keby tento nebol zločinec, neboli by sme ti ho vydali.");
@@ -108,7 +108,7 @@ public class Main {
 
 
         // 19 kapitola
-        Muz pilatovVojak = new Muz("Pilatov vojak");
+        Muz pilatovVojak = new Muz("Pilatov vojak", "Pilátovmu vojakovi");
         pilatovVojak.s(jezis).isliDo(new ZaujimaveMiesto("Bicovaci kol"));
         Bic bic = new Bic();
         pilatovVojak.malSoSebou(bic)
@@ -121,7 +121,7 @@ public class Main {
         pilatovVojak
                 .dal(trnovaKoruna, jezis)
                 .dal(new Predmet("Purpurovy plast"), jezis);
-        Ludia ostatniPilatoviVojaci = new Ludia("Ostatni Pilatovi vojaci");
+        Ludia ostatniPilatoviVojaci = new Ludia("Ostatni Pilatovi vojaci", "ostatným Pilátovym vojakom");
         pilatovVojak.s(ostatniPilatoviVojaci).povedali("Buď pozdravený, židovský kráľ!");
         pilat.isielDo(predVladnouBudovou).povedal("Pozrite, privádzam vám ho von, aby ste vedeli, že na ňom nijakú vinu nenachádzam.");
         pilatovVojak.s(jezis).isliDo(predVladnouBudovou);

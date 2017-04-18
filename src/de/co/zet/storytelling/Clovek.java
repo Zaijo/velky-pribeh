@@ -6,10 +6,12 @@ import java.util.ArrayList;
 
 public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny, SchopnyReci {
     private String meno;
+    private String menoDativ;
     private Miesto miesto;
 
-    public Clovek(String meno) {
+    public Clovek(String meno, String menoDativ) {
         this.meno = meno;
+        this.menoDativ = menoDativ;
     }
 
     public Clovek udrelKohoKamCim(Clovek koho, CastTela kam, PouzitelnyNaUder cim) {
@@ -35,6 +37,11 @@ public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny, SchopnyReci 
 
     public String meno() {
         return meno;
+    }
+
+    @Override
+    public String menoDativ() {
+        return menoDativ;
     }
 
     @Override

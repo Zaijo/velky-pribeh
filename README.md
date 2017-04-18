@@ -1,7 +1,10 @@
 Veľký príbeh
 ============
 
-Nástroj na písanie príbehov tak, aby im rozumeli stroje.
+Nástroj na písanie príbehov tak, aby im rozumeli stroje. Ako príklad uvádzam dve transformácie tohto príbehu:
+
+- textová (`PlainText`)
+- hovorená reč (`Speech`) - vyžaduje Mac s nainštalovaným jazykom Laura (slovenčina)
 
 Evanjelium podľa Jána
 ---------------------
