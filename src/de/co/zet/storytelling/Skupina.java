@@ -29,7 +29,7 @@ public class Skupina implements NositelVeci, Pohyblivy {
     }
 
     @Override
-    public Pohyblivy isielDo(Miesto kam) {
+    public Skupina isielDo(Miesto kam) {
         this.miesto = kam;
         notifyObservers(new MoveEvent(this, kam));
         return this;

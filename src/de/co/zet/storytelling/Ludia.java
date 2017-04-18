@@ -53,6 +53,10 @@ public class Ludia extends ArrayList<Clovek> implements Pohyblivy, SchopnyReci, 
         return this;
     }
 
+    public Ludia bicovali(Clovek koho) {
+        return this;
+    }
+
     @Override
     @Deprecated
     public Pohyblivy isielDo(Miesto kam) {

@@ -1,8 +1,5 @@
 package de.co.zet.storytelling;
 
-/**
- * TODO Description HERE.
- */
 public interface NositelVeci {
     default NositelVeci malSoSebou(Vec vec) {
         return this;

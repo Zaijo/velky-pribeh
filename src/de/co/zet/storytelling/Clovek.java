@@ -45,11 +45,52 @@ public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny, SchopnyReci 
     }
 
     @Override
+    public Clovek malSoSebou(Vec vec) {
+        return this;
+    }
+
+    public Predmet vyrobilPredmet(String nazov) {
+        return new Predmet(nazov);
+    }
+
+    public Clovek dal(Vec co, Clovek komu) {
+        return this;
+    }
+
+    public Clovek saZlakol() {
+        return this.dostal(Pocit.STRACH);
+    }
+
+    public Clovek dostal(Pocit pocit) {
+        return this;
+    }
+
+    @Override
     public Miesto miesto() {
         return this.miesto;
     }
 
     public Clovek saZohrieval(ZdrojTepla zdrojTepla) {
+        return this;
+    }
+
+    public Clovek bol(Miesto kde) {
+        this.miesto = kde;
+        return this;
+    }
+
+    public Clovek siSadol(MiestoNaSedenie miestoNaSedenie) {
+        return this;
+    }
+
+    /**
+     * Netypické volanie špecifické pre evanjelium, alebo iné texty s mučením
+     */
+    public Clovek pribil(Clovek koho, Predmet kam) {
+        return this;
+    }
+
+    public Clovek pribil(Predmet co, Predmet kam) {
         return this;
     }
 }
