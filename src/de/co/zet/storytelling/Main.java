@@ -156,5 +156,20 @@ public class Main {
         // TODO dalsi dvaja ukrizovani
         Predmet napisNaKriz = pilat.vyrobilPredmet("Napis na kriz s textom: \"Ježiš Nazaretský, židovský kráľ.\"");
         pilatovVojak.pribil(napisNaKriz, zvisleRamenoKriza);
+        velknaziAZakonnici.povedali("Nepíš: Židovský kráľ, ale: On povedal: »Som židovský kráľ.«");
+        pilat.povedal("Čo som napísal, to som napísal.", velknaziAZakonnici);
+        vojaci.zodvihol(new Predmet("Jezisove oblecenie"));
+        vojaci.povedali("Netrhajme ho, ale losujme oň, čí bude!");
+        vojaci.hodil(new Predmet("Lós"));
+        Zena maria = new Zena("Mária", "Márii");
+        Zena mariaKleopasova = new Zena("Mária Kleopasova", "Márii Kleopasovej");
+        jezis.povedal("Žena, hľa, tvoj syn!", maria).povedal("Hľa, tvoja matka", jan);
+        jezis.povedal("Žíznim.");
+        Predmet nadoba = new Predmet("Nadoba plna octu");
+        Predmet spongia = new Predmet("Špongia");
+        vojaci.namocili(spongia, nadoba);
+        vojaci.dali(spongia, jezis);
+        jezis.povedal("Je dokonané.");
+        Telo jezisoveTelo = jezis.zomrel();
     }
 }

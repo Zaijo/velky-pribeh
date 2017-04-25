@@ -100,4 +100,8 @@ public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny, SchopnyReci 
     public Clovek pribil(Predmet co, Predmet kam) {
         return this;
     }
+
+    public Telo zomrel() {
+        return new Telo(this);
+    }
 }

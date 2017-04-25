@@ -28,4 +28,12 @@ public interface NositelVeci {
     default NositelVeci zodvihol(Vec vec) {
         return this;
     }
+
+    default NositelVeci namocili(Predmet co, Predmet kam) {
+        return this;
+    }
+
+    default NositelVeci dali(Predmet co, Clovek komu) {
+        return this;
+    }
 }
