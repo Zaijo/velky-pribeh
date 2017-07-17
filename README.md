@@ -1,6 +1,8 @@
 Veľký príbeh
 ============
 
+[![Build Status](https://travis-ci.org/Zaijo/velky-pribeh.svg?branch=master)](https://travis-ci.org/Zaijo/velky-pribeh)
+
 Nástroj na písanie príbehov tak, aby im rozumeli stroje. Ako príklad uvádzam dve transformácie tohto príbehu:
 
 - textová (`PlainText`)
