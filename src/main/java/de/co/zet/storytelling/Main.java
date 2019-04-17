@@ -31,7 +31,7 @@ public class Main {
         Muz simonPeter = new Muz("Šimon Peter", "Šimonovi Petrovi");
         Muz malchus = new Muz("Malchus", "Malchusovi");
         Mec petrovMec = new Mec();
-        simonPeter.malSoSebou(petrovMec).vytiahol(petrovMec).pouzil(petrovMec, malchus);
+        ((Muz)simonPeter.malSoSebou(petrovMec)).vytiahol(petrovMec).pouzil(petrovMec, malchus);
         jezis.povedal("Schovaj meč do pošvy! Azda nemám piť kalich, ktorý mi dal Otec?!");
         DomSNadvorim annasovhoDomu = new DomVelknazaBuilder("Annasov dom")
                 .maVstupneDvere(new ZaujimaveMiesto("Vstupne dvere"))

@@ -22,13 +22,19 @@ public class Clovek implements Pohyblivy, NositelVeci, Oslovitelny, SchopnyReci 
         ArrayList<Clovek> list = new ArrayList<>();
         list.add(this);
         list.add(kym);
-        return new Ludia(list);
+        return new Ludia(
+            String.format("%s a %s", meno(), kym.meno()), // TODO duplicita s triedou Ludia
+            String.format("%s a %s", menoDativ(), kym.menoDativ()),
+            list);
     }
     public Ludia s(Ludia viacerymi) {
         ArrayList<Clovek> list = new ArrayList<>();
         list.add(this);
         list.addAll(viacerymi);
-        return new Ludia(list);
+        return new Ludia(
+            String.format("%s a ďalší", meno()), // TODO duplicita s triedou Ludia
+            String.format("%s a ďalším", menoDativ()),
+            list);
     }
 
     public Clovek zviazal(Muz jezis) {
