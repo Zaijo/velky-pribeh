@@ -13,6 +13,6 @@ public interface Observable {
     }
 
     default void notifyObservers(StoryEvent event) {
-        observers.stream().forEach((o) -> o.update(event));
+        observers.forEach((o) -> o.update(event));
     }
 }
