@@ -10,7 +10,7 @@ public class Main {
         Skupina ucenici = new Skupina("Ucenici");
         Muz jezis = new Muz("Ježiš", "Ježišovi");
         jezis.addObserver(new PlainText());
-        jezis.addObserver(new Speech());
+        //jezis.addObserver(new Speech());
 
         Miesto getsemani = new Zahrada("Getsemani");
         jezis.isielDo(getsemani);
